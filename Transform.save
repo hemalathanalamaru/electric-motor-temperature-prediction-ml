@@ -1,0 +1,31 @@
+# ==============================
+# TRANSFORM.SAVE (Scaler File)
+# ==============================
+
+import pandas as pd
+import pickle
+from sklearn.preprocessing import MinMaxScaler
+
+# Load dataset
+df = pd.read_csv("Dataset.csv")
+
+# Drop unwanted columns if present
+if 'profile_id' in df.columns:
+    df = df.drop('profile_id', axis=1)
+
+if 'torque' in df.columns:
+    df = df.drop('torque', axis=1)
+
+# Define features (X)
+X = df.drop('pm', axis=1)
+
+# Create scaler
+scaler = MinMaxScaler()
+
+# Fit scaler on features
+scaler.fit(X)
+
+# Save scaler
+pickle.dump(scaler, open("transform.save", "wb"))
+
+print("transform.save created successfully ✅")

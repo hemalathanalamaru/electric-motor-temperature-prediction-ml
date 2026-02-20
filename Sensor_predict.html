@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sensor Prediction</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+    <h2>Sensor Based Prediction</h2>
+
+    <form action="/predict" method="post">
+
+        <input type="text" name="ambient" placeholder="Ambient Temperature" required><br><br>
+        <input type="text" name="coolant" placeholder="Coolant Temperature" required><br><br>
+        <input type="text" name="u_d" placeholder="Voltage d-axis" required><br><br>
+        <input type="text" name="u_q" placeholder="Voltage q-axis" required><br><br>
+        <input type="text" name="motor_speed" placeholder="Motor Speed" required><br><br>
+        <input type="text" name="i_d" placeholder="Current d-axis" required><br><br>
+        <input type="text" name="i_q" placeholder="Current q-axis" required><br><br>
+        <input type="text" name="stator_yoke" placeholder="Stator Yoke Temp" required><br><br>
+        <input type="text" name="stator_winding" placeholder="Stator Winding Temp" required><br><br>
+
+        <button type="submit">Predict Temperature</button>
+    </form>
+
+    <br>
+    <a href="/">Go Back</a>
+
+</body>
+</html>
